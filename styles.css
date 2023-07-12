@@ -114,7 +114,13 @@ h2 {
     align-self: flex-start;
 }
 
+.row__Content .image__Wrapper {
+    flex: 1 0 auto;
+}
+
 .row__Content img {
+    display: block;
+    width: 450px;
     object-fit: cover;
     height: 250px;
 }
