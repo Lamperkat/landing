@@ -218,6 +218,7 @@ input {
 }
 
 .form__Content {
+    margin: 0 80px;
     display: flex;
     justify-content: space-between;
 }
@@ -243,4 +244,8 @@ a {
 a:hover {
     color: rgb(150, 92, 255);
 
+}
+
+.testimonials h1 {
+    text-align: center;
 }
