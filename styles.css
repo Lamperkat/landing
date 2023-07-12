@@ -26,7 +26,7 @@ h2 {
     position: relative;
     height: 130vh;
     width: 100%;
-    background: url(./background.png) center center/cover;
+    background: url(./images/background.png) center center/cover;
     object-fit: fill;
     display: flex;
     align-items: stretch;
@@ -137,7 +137,7 @@ h2 {
     margin: 100px 80px;
     border-radius: 5px;
     height: 400px;
-    background: url('./second_background.png') center center/cover;
+    background: url('./images/second_background.png') center center/cover;
     display: flex;
     align-items: center;
 }
