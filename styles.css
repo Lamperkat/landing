@@ -24,17 +24,20 @@ h2 {
 
 #home {
     position: relative;
+    background-color: #0a0a0a;
     height: 130vh;
     width: 100%;
     background: url(./images/background.png) center center/cover;
     object-fit: fill;
     display: flex;
     align-items: stretch;
+    min-height: 950px;
 }
 
 .container {
-    width: 1280px;
+    max-width: 1280px;
     margin: 0 auto;
+    width: 90vw;
 }
 
 .home__Content {
@@ -64,14 +67,14 @@ h2 {
     bottom: 120px;
     left: 50%;
     transform: translateX(-50%);
-    width: 75%;
+    width: 75vw;
     margin: 0 auto;
     height: 375px;
 }
 
 .img__Container>img {
-    width: 100%;
     display: block;
+    width: 100%;
 }
 
 .partners {
@@ -247,7 +250,7 @@ input {
     background: rgb(37, 37, 37);
     color: rgb(146, 146, 146);
     box-shadow: transparent 0px 0px 0px 1px inset;
-    margin: 30px 0;
+    margin: 15px 0;
     border-radius: 12px;
 }
 
@@ -284,26 +287,108 @@ a:hover {
     text-align: center;
 }
 
-@keyframes popup-right {
-    from {
-        opacity: 0;
-        transform: translateX(100px);
+
+@media screen and (min-width: 380px) and (max-width: 576px) {
+
+    #home {
+        position: relative;
+        min-height: 500px;
+        height: 100vh;
     }
 
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes popup-left {
-    from {
-        opacity: 0;
-        transform: translateX(-100px);
+    #home .container {
+        width: 90vw;
+        margin: 0 auto;
+        max-width: 420px;
+        height: 100%;
     }
 
-    to {
-        opacity: 1;
-        transform: translateX(0);
+
+    .img__Container {
+        position: absolute;
+        width: 90vw;
+        margin: 0 auto;
+        bottom: 0;
+        height: 160px;
+    }
+
+    .img__Container img {
+        display: block;
+        object-fit: cover;
+    }
+
+    .partners {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .services .row__Content {
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .services .row__Content {
+        gap: 40px;
+        width: 100%;
+
+    }
+
+    .services .row {
+        margin: 15px 10px;
+    }
+
+    .services .row__Content img {
+        width: 90vw;
+    }
+
+    .services .row__Content:nth-child(1) {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .services .row__Content:nth-child(3) {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .services .row__Content:nth-child(2) {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .tagline .container {
+        width: 95vw;
+    }
+
+    .tagline .container .background__image {
+        margin: 20px 8px;
+        justify-content: center;
+
+    }
+
+    .services {
+        margin: 30px 10px;
+    }
+
+
+
+    .layered__Image {
+        display: none;
+    }
+
+    .background__image h3 {
+        max-width: 240px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .testimonials h1 {
+        font-weight: 400;
+    }
+
+    .form .container {
+        width: 90vw;
+        margin: 0 auto;
     }
 }
