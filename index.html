@@ -2,9 +2,9 @@
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" href="./styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles.css">
     <title>Document</title>
 </head>
 
@@ -15,23 +15,58 @@
                 <h1>Воплотим ваши идеи в совершенные приложения.</h1>
                 <h5>Мощные приложения, которые оживят вашу бизнес-идею и приведут к успеху.</h5>
             </div>
+            <div class="buttons">
+                <div сlass="buttons_Container buttons_ContainerOne">
+                    <a href="" class="btn home">Главная</a>
+                    <a href="#type__of__Services" class="btn home">Наши услуги</a>
+                    <a href="" class="btn home">Цены</a>
+                </div>
+                <div class="buttons_Container buttons_ContainerTwo">
+                    <a href="#whyWe" class="btn home">Почему мы?</a>
+                    <a href="#contact" class="btn home">Связаться с нами</a>
+
+                </div>
+
+            </div>
 
         </div>
     </section>
-    <section class="partners">
+    <!-- <section class="partners">
         <img src="./images/company1.svg" alt="">
         <img src="./images/company2.svg" alt="">
         <img src="./images/company3.svg" alt="">
         <img src="./images/company4.svg" alt="">
+    </section> -->
+    <section class="type__of__Services" id="type__of__Services">
+        <h3>Виды услуг которые мы предоставляем:</h3>
+        <div class="cards_Container">
+            <div class="card">
+                <h4>Сайт Визитка</h4>
+                <p>Небольшой сайт о компании, как правило, состоящий из одной или пяти-шести веб-страниц. Содержит
+                    основную информацию об организации, ее товарах/услугах, прейскуранты и контактные данные.</p>
+            </div>
+            <div class="card">
+                <h4>Лендинг</h4>
+                <p>Одностраничный сайт, подающий конкретный продукт в максимально выгодном свете. Его основная задача –
+                    призыв посетителей к определенному целевому действию, чаще всего к покупке продукта.</p>
+            </div>
+            <div class="card">
+                <h4>Интернет-магазин</h4>
+                <p>Обладает всем необходимым функционалом для демонстрации и продажи товаров/услуг в Интернете. От
+                    удобного ознакомления с товаром до оформления доставки и онлайн-оплаты.</p>
+            </div>
+        </div>
     </section>
-    <section class="services">
+    <section class="services" id="whyWe">
         <div class="container">
-            <h3 class="title">Наши услуги</h3>
+            <h3 class="title">Почему стоит заказывать у нас:</h3>
             <div class="row">
                 <div class="row__Content">
                     <div>
 
-                        <h2> Индивидуальный подход </h2>
+                        <h2> Индивидуальный подход
+                        </h2>
+                        <div class="underline"></div>
                         <p class="text">
                             Мы тщательно изучаем ваши бизнес-потребности и цели, чтобы предложить вам
                             решение, специально адаптированное под ваши требования. Мы создаем приложения, которые
@@ -46,6 +81,7 @@
                     <img src="./images/service2.png" alt="">
                     <div>
                         <h2>Техническая экспертиза </h2>
+                        <div class="underline"></div>
                         <p class="text">
                             Наши разработчики обладают глубокими знаниями и опытом работы с различными технологиями и
                             платформами разработки. Мы используем передовые инструменты и методы, чтобы создавать
@@ -59,6 +95,7 @@
                 <div class="row__Content">
                     <div>
                         <h2> Превосходный пользовательский опыт </h2>
+                        <div class="underline"></div>
                         <p class="text">
                             Мы ставим пользователей в центр разработки и дизайна приложений. Наша команда уделяет особое
                             внимание удобству использования, интуитивной навигации и привлекательному дизайну, чтобы
@@ -67,7 +104,6 @@
                         </p>
                     </div>
 
-                    <img src="./images/service4.png" alt="">
                 </div>
             </div>
         </div>
@@ -93,7 +129,7 @@
 
         </div>
     </section>
-    <section class="form">
+    <section class="form" id="contact">
         <h1 class="title">Заполните форму для связи с нами</h1>
         <div class="container">
             <div class="form__Content">
