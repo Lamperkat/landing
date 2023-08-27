@@ -17,7 +17,7 @@
             </div>
             <div class="buttons">
                 <div сlass="buttons_Container buttons_ContainerOne">
-                    <a href="" class="btn home">Главная</a>
+                    <a href="#" class="btn home">Главная</a>
                     <a href="#type__of__Services" class="btn home">Наши услуги</a>
                     <a href="" class="btn home">Цены</a>
                 </div>
@@ -130,15 +130,27 @@
         </div>
     </section>
     <section class="form" id="contact">
+        <div class="overlay" id="overlay"></div>
+        <div class="modal " id="modal">
+            <div>
+
+                <h4>Форма успешно отправлена!</h4>
+                <img src="./images/checkmark.png" style="margin: 0 auto; display: block; " width="28px" alt="">
+            </div>
+            <button class="modal-close-btn" id="close-btn">X</button>
+        </div>
         <h1 class="title">Заполните форму для связи с нами</h1>
         <div class="container">
             <div class="form__Content">
-                <form>
+                <!--
+                    publish id :AKfycbxlqHFX7a6JL__fDWusA652XFYVTWKB7CHtiLhSZj80TNCxiu7UCb3YU22BfyfTMK-2
+                -->
+                <form id="form"
+                    action="https://script.google.com/macros/s/AKfycbxlqHFX7a6JL__fDWusA652XFYVTWKB7CHtiLhSZj80TNCxiu7UCb3YU22BfyfTMK-2/exec">
                     <div class="inputs__Container">
-
-                        <input type="text" placeholder="Ваше имя">
-                        <input type="tel" placeholder="Номер телефона">
-                        <input type="email" placeholder="Электронный адрес">
+                        <input type="text" placeholder="Ваше имя" name="name" required>
+                        <input type="tel" placeholder="Номер телефона" name="phone" required>
+                        <input type="email" placeholder="Электронный адрес" name="email" required>
                     </div>
                     <button class="btn" type="submit">Оставить заявку</button>
                 </form>
@@ -151,6 +163,34 @@
 
         </div>
     </section>
+    <script>
+        window.addEventListener("load", function () {
+            const form = document.getElementById('form');
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+                document.getElementById('overlay').classList.add('is-visible');
+                document.getElementById('modal').classList.add('is-visible');
+                const data = new FormData(form);
+                const action = e.target.action;
+                fetch(action, {
+                    method: 'POST',
+                    body: data,
+                })
+                    .then((req) => {
+                        console.log(req);
+                        document.getElementById('close-btn').addEventListener('click', function () {
+                            document.getElementById('overlay').classList.remove('is-visible');
+                            document.getElementById('modal').classList.remove('is-visible');
+                        });
+                        document.getElementById('overlay').addEventListener('click', function () {
+                            document.getElementById('overlay').classList.remove('is-visible');
+                            document.getElementById('modal').classList.remove('is-visible');
+                        });
+                        form.reset()
+                    })
+            });
+        });
+    </script>
 </body>
 
 </html>
