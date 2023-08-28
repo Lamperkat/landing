@@ -164,32 +164,40 @@
         </div>
     </section>
     <script>
+        //Добавить isDisabled при повторном нажатии на 
+        const btn = document.querySelector('button[type="submit"]')
         window.addEventListener("load", function () {
             const form = document.getElementById('form');
             form.addEventListener("submit", function (e) {
                 e.preventDefault();
-                document.getElementById('overlay').classList.add('is-visible');
-                document.getElementById('modal').classList.add('is-visible');
                 const data = new FormData(form);
                 const action = e.target.action;
+                btn.textContent = "Отправка..."
                 fetch(action, {
                     method: 'POST',
                     body: data,
+                }).then(() => {
+                    setTimeout(() => {
+
+                        btn.textContent = "Оставить заявку"
+                    }, 3000);
+                    btn.textContent = 'Отправлено!'
+                    document.getElementById('overlay').classList.add('is-visible');
+                    document.getElementById('modal').classList.add('is-visible');
+                    document.getElementById('close-btn').addEventListener('click', function () {
+                        document.getElementById('overlay').classList.remove('is-visible');
+                        document.getElementById('modal').classList.remove('is-visible');
+                    });
+                    document.getElementById('overlay').addEventListener('click', function () {
+                        document.getElementById('overlay').classList.remove('is-visible');
+                        document.getElementById('modal').classList.remove('is-visible');
+                    });
+                    form.reset()
                 })
-                    .then((req) => {
-                        console.log(req);
-                        document.getElementById('close-btn').addEventListener('click', function () {
-                            document.getElementById('overlay').classList.remove('is-visible');
-                            document.getElementById('modal').classList.remove('is-visible');
-                        });
-                        document.getElementById('overlay').addEventListener('click', function () {
-                            document.getElementById('overlay').classList.remove('is-visible');
-                            document.getElementById('modal').classList.remove('is-visible');
-                        });
-                        form.reset()
-                    })
-            });
+            })
+
         });
+
     </script>
 </body>
 
