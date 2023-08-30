@@ -166,10 +166,13 @@
     <script>
         //Добавить isDisabled при повторном нажатии на 
         const btn = document.querySelector('button[type="submit"]')
+        let isBusy = false
         window.addEventListener("load", function () {
             const form = document.getElementById('form');
             form.addEventListener("submit", function (e) {
                 e.preventDefault();
+                if (isBusy) return
+                isBusy = true
                 const data = new FormData(form);
                 const action = e.target.action;
                 btn.textContent = "Отправка..."
@@ -178,9 +181,10 @@
                     body: data,
                 }).then(() => {
                     setTimeout(() => {
-
                         btn.textContent = "Оставить заявку"
+                        isBusy = false
                     }, 3000);
+
                     btn.textContent = 'Отправлено!'
                     document.getElementById('overlay').classList.add('is-visible');
                     document.getElementById('modal').classList.add('is-visible');
